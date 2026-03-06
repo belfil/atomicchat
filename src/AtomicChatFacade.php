@@ -1,0 +1,21 @@
+<?php
+
+namespace Belfil\AtomicChat;
+
+use Illuminate\Support\Facades\Facade;
+
+/**
+ * @see \Belfil\AtomicChat\Skeleton\SkeletonClass
+ */
+class AtomicChatFacade extends Facade
+{
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
+    protected static function getFacadeAccessor()
+    {
+        return 'atomic-chat';
+    }
+}
