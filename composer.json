@@ -1,0 +1,54 @@
+{
+    "name": "belfil/atomic-chat",
+    "description": "Atomic-fast, scalable messaging SDK for Laravel ",
+    "keywords": [
+        "belfil",
+        "atomic-chat"
+    ],
+    "homepage": "https://github.com/belfil/atomic-chat",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Philip Belousov",
+            "email": "belousovfilip@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Belfil\\AtomicChat\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Belfil\\AtomicChat\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Belfil\\AtomicChat\\AtomicChatServiceProvider"
+            ],
+            "aliases": {
+                "AtomicChat": "Belfil\\AtomicChat\\AtomicChatFacade"
+            }
+        }
+    }
+}
