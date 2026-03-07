@@ -1,63 +1,72 @@
 {
-    "name": "belfil/atomic-chat",
-    "description": "Atomic-fast, scalable messaging SDK for Laravel",
-    "keywords": [
-        "belfil",
-        "atomic-chat",
-        "laravel",
-        "messaging",
-        "chat"
-    ],
-    "homepage": "https://github.com/belfil/atomic-chat",
-    "license": "MIT",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Philip Belousov",
-            "email": "belousovfilip@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.2",
-        "illuminate/database": "^10.0|^11.0",
-        "illuminate/support": "^10.0|^11.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "^8.22|^9.0",
-        "phpunit/phpunit": "^10.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "Belfil\\AtomicChat\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Belfil\\AtomicChat\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
-        "format": "vendor/bin/pint"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "php-http/discovery": true
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Belfil\\AtomicChat\\AtomicChatServiceProvider"
-            ],
-            "aliases": {
-                "AtomicChat": "Belfil\\AtomicChat\\Facades\\AtomicChat"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "belfil/atomic-chat",
+  "description": "Atomic-fast, scalable messaging SDK for Laravel",
+  "keywords": [
+    "belfil",
+    "atomic-chat",
+    "laravel",
+    "messaging",
+    "chat"
+  ],
+  "homepage": "https://github.com/belfil/atomic-chat",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Philip Belousov",
+      "email": "belousovfilip@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/database": "^10.0|^11.0",
+    "illuminate/support": "^10.0|^11.0"
+  },
+  "require-dev": {
+    "larastan/larastan": "^3.0",
+    "laravel/pint": "^1.27",
+    "orchestra/testbench": "^8.22|^9.0",
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^10.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Belfil\\AtomicChat\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Belfil\\AtomicChat\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+    "analyze": "vendor/bin/phpstan analyze",
+    "lint": "vendor/bin/pint",
+    "check": [
+      "@lint",
+      "@analyze",
+      "@test"
+    ]
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Belfil\\AtomicChat\\AtomicChatServiceProvider"
+      ],
+      "aliases": {
+        "AtomicChat": "Belfil\\AtomicChat\\Facades\\AtomicChat"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
