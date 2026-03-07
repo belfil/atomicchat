@@ -1,9 +1,12 @@
 {
     "name": "belfil/atomic-chat",
-    "description": "Atomic-fast, scalable messaging SDK for Laravel ",
+    "description": "Atomic-fast, scalable messaging SDK for Laravel",
     "keywords": [
         "belfil",
-        "atomic-chat"
+        "atomic-chat",
+        "laravel",
+        "messaging",
+        "chat"
     ],
     "homepage": "https://github.com/belfil/atomic-chat",
     "license": "MIT",
@@ -16,30 +19,34 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/support": "^8.0"
+        "php": "^8.2",
+        "illuminate/database": "^10.0|^11.0",
+        "illuminate/support": "^10.0|^11.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^9.0"
+        "orchestra/testbench": "^8.22|^9.0",
+        "phpunit/phpunit": "^10.5"
     },
     "autoload": {
         "psr-4": {
-            "Belfil\\AtomicChat\\": "src"
+            "Belfil\\AtomicChat\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Belfil\\AtomicChat\\Tests\\": "tests"
+            "Belfil\\AtomicChat\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/pint"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "extra": {
         "laravel": {
@@ -47,8 +54,10 @@
                 "Belfil\\AtomicChat\\AtomicChatServiceProvider"
             ],
             "aliases": {
-                "AtomicChat": "Belfil\\AtomicChat\\AtomicChatFacade"
+                "AtomicChat": "Belfil\\AtomicChat\\Facades\\AtomicChat"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
