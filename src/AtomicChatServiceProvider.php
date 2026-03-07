@@ -21,7 +21,7 @@ class AtomicChatServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('atomic-chat.php'),
+                __DIR__ . '/../config/atomic-chat.php' => config_path('atomic-chat.php'),
             ], 'config');
 
             // Publishing the views.
@@ -49,10 +49,7 @@ class AtomicChatServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'atomic-chat');
-
-        // Register the main class to use with the facade
+        $this->mergeConfigFrom(__DIR__ . '/../config/atomic-chat.php', 'atomic-chat');
         $this->app->singleton('atomic-chat', function () {
             return new AtomicChat;
         });

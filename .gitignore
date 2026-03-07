@@ -22,3 +22,10 @@ rad.json
 TestResults.xml
 # JetBrains IDEs
 .idea/
+# Composer
+/vendor/
+/composer.lock
+# Phpunit
+/.phpunit.result.cache
+/phpunit.xml.bak
+/.phpunit.cache/test-results
