@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Belfil\AtomicChat\Tests\Feature\Migrations;
 
 use Belfil\AtomicChat\Tests\Helpers\Database;
@@ -33,7 +35,7 @@ class MessageTest extends TestCase
             'sender_id',
             'content',
             'created_at',
-            'updated_at'
+            'updated_at',
         ]);
         $this->assertIndexExists($table, $table . '_chat_id_idx');
         $this->assertIndexExists($table, $table . '_sender_id_idx');
