@@ -1,0 +1,17 @@
+{
+  "preset": "laravel",
+  "rules": {
+    "declare_strict_types": true,
+    "braces_position": {
+      "anonymous_classes_opening_brace": "same_line",
+      "classes_opening_brace": "next_line_unless_newline_at_signature_end",
+      "functions_opening_brace": "next_line_unless_newline_at_signature_end"
+    },
+    "concat_space": {
+      "spacing": "one"
+    }
+  },
+  "exclude": [
+    "vendor"
+  ]
+}

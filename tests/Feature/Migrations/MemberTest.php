@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Belfil\AtomicChat\Tests\Feature\Migrations;
 
 use Belfil\AtomicChat\Tests\Helpers\Database;
@@ -34,7 +36,7 @@ class MemberTest extends TestCase
             'last_read_id',
             'role',
             'created_at',
-            'updated_at'
+            'updated_at',
         ]);
         $this->assertIndexExists($table, $table . '_unique_actor_id_chat_id');
     }
