@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Belfil\AtomicChat;
 
 use Illuminate\Support\ServiceProvider;
@@ -9,7 +11,7 @@ class AtomicChatServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         /*
          * Optional methods to load your package assets
@@ -47,7 +49,7 @@ class AtomicChatServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/atomic-chat.php', 'atomic-chat');
         $this->app->singleton('atomic-chat', function () {
