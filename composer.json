@@ -51,6 +51,7 @@
     "check": [
       "@lint:php",
       "@lint:md",
+      "@lint:yaml",
       "@analyze:php",
       "@test"
     ]
