@@ -26,6 +26,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -38,14 +43,14 @@ jobs:
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
           composer update --prefer-dist --no-interaction --prefer-stable -W
 
-      - name: Check Code Style
-        run: composer lint -- --test
+      - name: Markdown Lint
+        run: composer lint:md
 
-      - name: Static Analysis
-        run: composer analyze
+      - name: PHP Code Style (Pint)
+        run: composer lint:php -- --test
+
+      - name: Static Analysis (PHPStan)
+        run: composer analyze:php
 
       - name: Execute Tests
         run: composer test
-
-
-

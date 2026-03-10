@@ -43,11 +43,13 @@
   "scripts": {
     "test": "vendor/bin/phpunit",
     "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
-    "analyze": "vendor/bin/phpstan analyze",
-    "lint": "vendor/bin/pint",
+    "analyze:php": "vendor/bin/phpstan analyze",
+    "lint:php": "vendor/bin/pint",
+    "lint:md": "npx -y markdownlint-cli2 \"**/*.md\" \"!node_modules\" \"!vendor\"",
     "check": [
-      "@lint",
-      "@analyze",
+      "@lint:php",
+      "@lint:md",
+      "@analyze:php",
       "@test"
     ]
   },
