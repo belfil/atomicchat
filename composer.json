@@ -45,7 +45,9 @@
     "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
     "analyze:php": "vendor/bin/phpstan analyze",
     "lint:php": "vendor/bin/pint",
-    "lint:md": "npx -y markdownlint-cli2 \"**/*.md\" \"!node_modules\" \"!vendor\"",
+    "lint:md": "npx -y markdownlint-cli2 '**/*.md' '!node_modules' '!vendor'",
+    "lint:yaml": "npx -y prettier --check \"**/*.{yml,yaml}\" --ignore-path .gitignore",
+    "lint:yaml-fix": "npx -y prettier --write \"**/*.{yml,yaml}\"",
     "check": [
       "@lint:php",
       "@lint:md",
