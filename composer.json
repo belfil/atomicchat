@@ -65,11 +65,8 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Belfil\\AtomicChat\\AtomicChatServiceProvider"
-      ],
-      "aliases": {
-        "AtomicChat": "Belfil\\AtomicChat\\Facades\\AtomicChat"
-      }
+        "Belfil\\AtomicChat\\Core\\ServiceProvider"
+      ]
     }
   },
   "minimum-stability": "dev",
