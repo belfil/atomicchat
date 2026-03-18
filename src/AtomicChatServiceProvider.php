@@ -18,14 +18,13 @@ class AtomicChatServiceProvider extends ServiceProvider
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'atomic-chat');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'atomic-chat');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/atomic-chat.php' => config_path('atomic-chat.php'),
             ], 'config');
-
             // Publishing the views.
             /*$this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/atomic-chat'),
@@ -52,8 +51,5 @@ class AtomicChatServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/atomic-chat.php', 'atomic-chat');
-        $this->app->singleton('atomic-chat', function () {
-            return new AtomicChat;
-        });
     }
 }
