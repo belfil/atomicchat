@@ -30,4 +30,24 @@ trait Database
             '--realpath' => true,
         ]);
     }
+
+    protected function actorTableName()
+    {
+        return config('atomic-chat.models.actor.table');
+    }
+
+    protected function chatTableName()
+    {
+        return config('atomic-chat.models.chat.table');
+    }
+
+    protected function memberTableName()
+    {
+        return config('atomic-chat.models.member.table');
+    }
+
+    protected function messageTableName()
+    {
+        return config('atomic-chat.models.message.table');
+    }
 }

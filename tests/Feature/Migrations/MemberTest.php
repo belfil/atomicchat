@@ -14,14 +14,13 @@ class MemberTest extends TestCase
 
     public function test_create_members_table_with_default_name(): void
     {
-        $table = config('atomic-chat.tables.members.name');
-        $this->assertMemberStructure($table);
+        $this->assertMemberStructure($this->memberTableName());
     }
 
     public function test_create_members_table_with_custom_name(): void
     {
         $table = 'custom_chat_members';
-        config(['atomic-chat.tables.members.name' => $table]);
+        config(['atomic-chat.models.member.table' => $table]);
         $this->migrateFresh();
         $this->assertMemberStructure($table);
     }

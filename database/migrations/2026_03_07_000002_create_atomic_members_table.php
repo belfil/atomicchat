@@ -7,12 +7,11 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    private const CONFIG_KEY = 'atomic-chat.tables.members';
+    private const CONFIG_TABLE_NAME = 'atomic-chat.models.member.table';
 
     public function up(): void
     {
-        $tableSettings = config(self::CONFIG_KEY);
-        $tableName = $tableSettings['name'];
+        $tableName = config(self::CONFIG_TABLE_NAME);
         Schema::create($tableName, function (Blueprint $table) use ($tableName) {
             $table->id();
             $table->foreignId('chat_id');
@@ -26,7 +25,6 @@ return new class extends Migration {
 
     public function down(): void
     {
-        $tableSettings = config(self::CONFIG_KEY);
-        Schema::dropIfExists($tableSettings['name']);
+        Schema::dropIfExists(config(self::CONFIG_TABLE_NAME));
     }
 };

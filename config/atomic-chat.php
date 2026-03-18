@@ -3,18 +3,18 @@
 declare(strict_types=1);
 
 return [
-    'tables' => [
-        'actors' => [
-            'name' => 'atomic_actors',
+    'models' => [
+        'actor' => [
+            'table' => 'atomic_actors',
         ],
-        'chats' => [
-            'name' => 'atomic_chats',
+        'chat' => [
+            'table' => 'atomic_chats',
         ],
-        'members' => [
-            'name' => 'atomic_members',
+        'member' => [
+            'table' => 'atomic_members',
         ],
-        'messages' => [
-            'name' => 'atomic_messages',
+        'message' => [
+            'table' => 'atomic_messages',
         ],
     ],
 ];

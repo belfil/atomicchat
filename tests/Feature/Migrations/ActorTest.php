@@ -14,14 +14,13 @@ class ActorTest extends TestCase
 
     public function test_create_table_with_default_table_name()
     {
-        $tableName = config('atomic-chat.tables.actors.name');
-        $this->assert($tableName);
+        $this->assert($this->actorTableName());
     }
 
     public function test_create_table_with_new_table_name()
     {
         $tableName = 'custom_actors_table';
-        config(['atomic-chat.tables.actors.name' => $tableName]);
+        config(['atomic-chat.models.actor.table' => $tableName]);
         $this->migrateFresh();
         $this->assert($tableName);
     }

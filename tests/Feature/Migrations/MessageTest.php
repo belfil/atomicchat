@@ -14,14 +14,13 @@ class MessageTest extends TestCase
 
     public function test_create_messages_table_with_default_name(): void
     {
-        $table = config('atomic-chat.tables.messages.name');
-        $this->assertMessageStructure($table);
+        $this->assertMessageStructure($this->messageTableName());
     }
 
     public function test_create_messages_table_with_custom_name(): void
     {
         $table = 'custom_chat_messages';
-        config(['atomic-chat.tables.messages.name' => $table]);
+        config(['atomic-chat.models.message.table' => $table]);
         $this->migrateFresh();
         $this->assertMessageStructure($table);
     }

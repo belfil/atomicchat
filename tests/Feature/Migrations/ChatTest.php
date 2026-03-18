@@ -14,14 +14,13 @@ class ChatTest extends TestCase
 
     public function test_create_table_with_default_table_name()
     {
-        $tableName = config('atomic-chat.tables.chats.name');
-        $this->assert($tableName);
+        $this->assert($this->chatTableName());
     }
 
     public function test_create_table_with_new_table_name()
     {
         $tableName = 'custom_chats_table';
-        config(['atomic-chat.tables.chats.name' => $tableName]);
+        config(['atomic-chat.models.chat.table' => $tableName]);
         $this->migrateFresh();
         $this->assert($tableName);
     }
