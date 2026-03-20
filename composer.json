@@ -24,11 +24,11 @@
     "illuminate/support": "^10.0|^11.0|^12.0"
   },
   "require-dev": {
-    "larastan/larastan": "^2.9.12|^3.0",
-    "phpstan/phpstan": "^1.12.17",
-    "laravel/pint": "^1.27",
-    "orchestra/testbench": "^8.22|^9.0|^10.0",
-    "phpunit/phpunit": "^10.5|^11.5"
+    "larastan/larastan": "^3.0",
+    "phpstan/phpstan": "^2.0",
+    "phpunit/phpunit": "^11.5",
+    "orchestra/testbench": "^10.0",
+    "laravel/pint": "^1.27"
   },
   "autoload": {
     "psr-4": {
