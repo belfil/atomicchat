@@ -19,7 +19,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'atomic-chat');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'atomic-chat');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
